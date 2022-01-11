@@ -102,11 +102,12 @@ function kontrola() {
         speedchange();
         console.log(skore, newX, active_coords1, active_coords2);
         if (oldX == newX) {
-            color = "blue";
+            color = "aquamarine";
             prfct = prfct + 1;
         } else {
             color = "yellow";
         }
+        inrperfect.innerHTML = `${prfct}`;
     }
 }
 
@@ -130,7 +131,6 @@ function setup() {
 //main draw
 function draw() {
     if (promena == 1) {
-        inrperfect.innerHTML = `${prfct}`;
         fill(color);
         background(255);
         rect((width / 2) - newX / 2, (height / 2), newX, 28);
@@ -172,7 +172,7 @@ function reset() {
 function game_end() {
     reset();
     promena = 0;
-    inrstart.innerHTML = `Play Again`;
+    inrstart.innerHTML = `Click to Play Again`;
     inrnewyx.innerHTML = ``;
     inrperfect.innerHTML = ``;
 }
@@ -181,8 +181,8 @@ function game_end() {
 function game_start() {
     promena = 1;
     inrstart.innerHTML = ``;
-    inrnewyx.innerHTML = `0`;
-    inrskore.innerHTML = `0`;
-    inrperfect.innerHTML = `0`;
+    inrnewyx.innerHTML = `Current Width`;
+    inrskore.innerHTML = `Score`;
+    inrperfect.innerHTML = `Perfect Rounds`;
     inrtxt.innerHTML = ``;
 }
